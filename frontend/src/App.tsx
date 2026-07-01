@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { 
-  LayoutDashboard, Terminal, Sparkles, History, Bookmark, Layers, 
-  Link, Settings, Play, BookOpen, Code, Trash, Download, 
-  Moon, Sun, HelpCircle, ChevronDown, Plus, Search, AlertCircle, Copy, BarChart3, X, Check,
+  Terminal, Sparkles, History, Bookmark, Layers, 
+  Link, Settings, Play, Code, Trash, Download, 
+  Moon, Sun, ChevronDown, Search, AlertCircle, Copy, BarChart3, X, Check,
   Home, Database, MessageSquare
 } from 'lucide-react';
 import Editor from '@monaco-editor/react';
@@ -19,7 +19,7 @@ interface ChatMessage {
 }
 
 export default function App() {
-  const [activeSidebar, setActiveSidebar] = useState<'dashboard' | 'editor' | 'assistant'>('dashboard');
+  const [activeSidebar, setActiveSidebar] = useState<'dashboard' | 'editor' | 'assistant' | 'schema' | 'history' | 'saved' | 'analytics' | 'connections' | 'export' | 'settings'>('dashboard');
   const [dashboardStats, setDashboardStats] = useState<any>(null);
   const [isStatsLoading, setIsStatsLoading] = useState(false);
 
@@ -130,7 +130,6 @@ export default function App() {
   }, [themeMode]);
 
   // SQL Editor Tabs
-  const [editorTabs, setEditorTabs] = useState(['SQL Editor']);
   const [activeEditorTab, setActiveEditorTab] = useState('SQL Editor');
   
   // SQL Editor starts empty, ready for real queries
@@ -156,7 +155,7 @@ export default function App() {
   const [schemaSearch, setSchemaSearch] = useState('');
   
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+
 
   // Starting with clean schema state (no mock tables)
   const [schema, setSchema] = useState<Record<string, any>>({});
@@ -424,13 +423,7 @@ export default function App() {
     alert('Query saved successfully!');
   };
 
-  const handleFocusSchemaSearch = () => {
-    setActiveSidebar('editor');
-    setTimeout(() => {
-      searchInputRef.current?.focus();
-      searchInputRef.current?.select();
-    }, 100);
-  };
+
 
   const exportCSV = () => {
     if (!results) return;
