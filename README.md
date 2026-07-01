@@ -2,6 +2,27 @@
 
 DialectDB is a next-generation, AI-powered database workspace and IDE. It bridges the gap between raw SQL execution and natural language, allowing developers to query, analyze, and optimize their databases using AI.
 
+---
+
+## 📸 Interactive Showcase
+
+### Dashboard Overview
+![Dashboard Overview](docs/images/dashboard.png)
+
+### Schema Explorer
+![Schema Explorer](docs/images/schema.png)
+
+### SQL Editor & AI Copilot Workspace
+![SQL Editor](docs/images/editor.png)
+
+### Connections Manager
+![Connections Manager](docs/images/connections.png)
+
+### Export Center
+![Export Center](docs/images/export.png)
+
+---
+
 ## 🚀 Technology Stack
 
 - **Backend:** FastAPI, Python, SQLAlchemy, Uvicorn
