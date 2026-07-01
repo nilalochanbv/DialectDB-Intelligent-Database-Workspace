@@ -1,0 +1,14 @@
+{
+  "name": "dialectdb",
+  "version": "1.0.0",
+  "description": "Talk to your database. Write SQL your way.",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && python -m venv backend/venv && backend/venv/Scripts/pip install -r backend/requirements.txt",
+    "dev:backend": "backend\\venv\\Scripts\\uvicorn app.main:app --reload --port 8000 --app-dir backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

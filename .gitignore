@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Local environment keys and configuration files
+.env
+.env.txt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE / Editor folders
+.vscode/
+.idea/
+.DS_Store
+
+# Frontend build outputs
+frontend/dist/
