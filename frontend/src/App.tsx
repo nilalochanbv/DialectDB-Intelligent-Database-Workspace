@@ -182,7 +182,7 @@ export default function App() {
   const [showChart, setShowChart] = useState(false);
   const [chartType, setChartType] = useState<'bar' | 'line'>('bar');
 
-  const backendHost = 'http://localhost:8000';
+  const backendHost = import.meta.env.VITE_BACKEND_HOST || 'https://dialectdb-intelligent-database-workspace.onrender.com';
 
   useEffect(() => {
     fetchStatus();
